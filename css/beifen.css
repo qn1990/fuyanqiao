@@ -1,0 +1,94 @@
+body,html{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+/*********************************父元素：背景墙******************************/
+#fa{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: linear-gradient(to right,#e9aea2,#af525d);
+    overflow: hidden;
+}
+/*********************************子元素：内容*******************************/
+#so {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top: 43%;
+    left: 50% ;
+    transform: translate(-50%, -50%);
+    border: 1px solid #ddd;
+    box-shadow: 5px 5px 10px #000;
+    background: #fff;
+}
+/*********导航*********/
+header{
+    width: 100%;
+    height: 10%;
+    background: linear-gradient(to bottom,#fff,#bbb);
+    /*text-align: center;*/
+    line-height: 100%;
+    font-size: 1.5em;
+    font-family:KaiTi_GB2312;
+    font-weight: bolder;
+}
+header>ul{
+    float:left;
+    list-style: none;
+}
+header>ul>li{
+    list-style-position: outside;
+    list-style: none;
+}
+/********正文*********/
+footer{
+
+}
+/*左边栏*/
+footer>#navLeft{
+    width: 20%;
+    height:100%;
+    float:left;
+}
+footer>#navLeft>.title{
+    /*背景#eee,边框#aaa,内边距6，字体1.5 粗体 鼠标变手指*/
+    background:#eee;
+    border:1px solid #aaa;
+    padding:5%;
+    font-weight:bold;
+    font-size:1.2em;
+    cursor:pointer;
+    text-align: center;
+    line-height: 100%;
+    box-shadow: 1px 1px 10px #ddd;
+    background: #bbbbbb;
+}
+#navLeft>.content{
+    /*边框#aaa,内边距6,高度60*/
+    height:0;
+    overflow:hidden;
+    opacity:0;
+    transition:all 0.1s linear;
+    text-align: center;
+    line-height: 100%;
+    cursor: pointer;
+}
+#navLeft>.content>p{
+    padding:3% 10%;
+    border:1px solid #aaa;
+    margin:0;
+    font-size: 0.8em ;
+}
+/*问题：高度为什么不能自适应*/
+#navLeft>.content.open{height: 100%;opacity:1;}
+
+/*右边栏*/
+footer>#container{
+    width:79.5%;
+    height:290px;
+    border:1px solid #ddd;
+    float:right;
+}
