@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--    <meta charset="UTF-8">-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>测试工具汇总</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+    <script src=" js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+</head>
+<body>
+<div id="fa">
+    <div id="so">
+        <header>
+<!--            <div id="navContorl">>>></div>-->
+<!--            <div id="wel">欢迎使用测试工具</div>-->
+            <div>欢迎使用测试工具</div>
+        </header>
+        <section>
+            <div id="myNav" class="panel-group">
+                <div id="my-group">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                            <div class="panel-title">
+                                <a class="glyphicon glyphicon-thumbs-up" href="#"></a>&nbsp;&nbsp;
+                                <a data-toggle="collapse" href="#wangcai">旺财</a></div>
+                        </div>
+                        <div id="wangcai" class="collapse panel-collapse"><!--加in默认展开-->
+                            <div class="panel-body">
+                                <div class="content">
+                                    <p class="" data-toggle="item">
+                                        <a href="#wangcai1" data-toggle="tab">修改散标应还日期</a>
+                                    </p>
+                                    <p data-toggle="item">
+                                        <a href="#wangcai2" data-toggle="tab">修改优先出借应还日期</a>
+                                    </p>
+                                    <p data-toggle="item">
+                                        <a href="#wangcai3" data-toggle="tab">删除核心用户</a>
+                                    </p>
+                                    <p data-toggle="item">
+                                        <a href="#wangcai4" data-toggle="tab">标的解冻</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">
+                            <div class="panel-title">
+                                <a class="glyphicon glyphicon-thumbs-up" href=""></a>&nbsp;&nbsp;
+                                <a data-toggle="collapse" href="#yunkong">云控</a>
+                            </div>
+                        </div>
+                        <div id="yunkong" class="collapse panel-collapse">
+                            <div class="panel-body">
+                                <div class="content">
+                                    <p data-toggle="item" href="">
+                                        <a data-toggle="tab" href="#yunkong1">生成报单</a>
+                                    </p>
+                                    <p data-toggle="item" href="">
+                                        <a data-toggle="tab" href="#yunkong2">生成账单</a>
+                                    </p>
+                                    <p data-toggle="item" href="">
+                                        <a data-toggle="tab" href="#yunkong3">添加企业</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <div class="panel-title">
+                                <a class="glyphicon glyphicon-thumbs-up" href=""></a>&nbsp;&nbsp;
+                                <a data-toggle="collapse" href="#xiaojin">消金</a>
+                            </div>
+                        </div>
+                        <div id="xiaojin" class="collapse panel-collapse">
+                            <div class="panel-body">
+                                <div class="content">
+                                    <p data-toggle="item" href="">
+                                        <a data-toggle="tab" href="#xiaojin1">生成报单</a>
+                                    </p>
+                                    <p data-toggle="item" href="">
+                                        <a data-toggle="tab" href="#xiaojin2">生成账单</a>
+                                    </p>
+                                    <p data-toggle="item" href="">
+                                        <a data-toggle="tab" href="#xiaojin3">添加企业</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="panel-title">
+                                <a class="glyphicon glyphicon-thumbs-up" href=""></a>&nbsp;&nbsp;
+                                <a data-toggle="collapse" href="#tongyong">通用</a></div>
+                        </div>
+                        <div id="tongyong" class="collapse panel-collapse">
+                            <div class="panel-body">
+                                <div class="content">
+                                    <p data-toggle="item">
+                                        <a href="#tongyong1" data-toggle="tab">生成证件号</a>
+                                    </p>
+                                    <p data-toggle="item">
+                                        <a href="#tongyong2" data-toggle="tab">生成银行卡</a>
+                                    </p>
+                                    <p data-toggle="item">
+                                        <a href="#tongyong3" data-toggle="tab">添加借款人</a>
+                                    </p>
+                                    <p data-toggle="item">
+                                        <a href="#tongyong4" data-toggle="tab">日期计算</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="myContent" class="tab-content">
+                <div id="coverPa"class="tab-pane fade in active">
+                    <div>👈请选择目标功能</div>
+                </div>
+                <div id="wangcai1" class="tab-pane fade">
+                    <div>
+                        <table align="center" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <th align="right">功能：</th>&nbsp;
+                                <td>
+                                    修改标的应还款日期
+                                </td>
+                            </tr>
+                            <tr>
+                                <th align="right">标的号:</th>&nbsp;
+                                <td>
+                                    <input id="productNid" type="text" placeholder="请输入标的号" required><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th align="right">还款日期:</th>
+                                <td>
+                                    <input id="repayTime" type="text" placeholder="请输入修改后的时间" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td>
+                                    <button onclick="product();" style="background: #fcf8e3;color:#999">提交</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="wangcai2" class="tab-pane fade">
+                    <div>
+                        <table align="center" cellspacing="0" style="table-layout: fixed">
+                            <tr style="width:100px">
+                                <th align="right">功能：</th>&nbsp;
+                                <td>
+                                    修改优先出借应还款日期
+                                </td>
+                            </tr>
+                            <tr>
+                                <th align="right">标的号:</th>&nbsp;
+                                <td>
+                                    <input id="priorityNid" type="text" placeholder="请输入标的号" required><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th align="right">还款日期:</th>
+                                <td>
+                                    <input id="priorityRepayTime" type="text" placeholder="请输入修改后的时间" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td>
+                                    <button onclick="priority();" style="background: #fcf8e3;color:#999">提交</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="wangcai3" class="tab-pane fade">
+                    <p>删除核心用户</p>
+                    <table>
+                        <tr>
+                            <td>
+                                <input id="hexinUserPhone" type="text" placeholder="请输入要删除的手机号">
+                            </td>
+                            <td>
+                                <button onclick="hexinUserDrop();" style="background: #fcf8e3;color:#999">提交</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="wangcai4" class="tab-pane fade">
+                    <p>标的解冻 </p>
+                </div>
+                <div id="yunkong1" class="tab-pane fade">
+                    <p>生成报单 </p>
+                </div>
+                <div id="yunkong2" class="tab-pane fade">
+                    <p>生成账单 </p>
+                </div>
+                <div id="yunkong3" class="tab-pane fade">
+                    <p>添加企业 </p>
+                </div>
+                <div id="xiaojin1" class="tab-pane fade">
+                    <p>进件流程 </p>
+                </div>
+                <div id="xiaojin2" class="tab-pane fade">
+                    <p>活体识别 </p>
+                </div>
+                <div id="xiaojin3" class="tab-pane fade">
+                    <p>风控规则 </p>
+                </div>
+                <div id="tongyong1" class="tab-pane fade">
+                    <p>生成证件号 </p>
+                    请确认生成数量：<input id="idCardsNum" type="text" value="3" style="width:30px">
+                    <button id="getIdCards" style="background: #337ab7;color:#fff">获取</button>
+                    <h5>结果如下：</h5>
+                    <div id="showIdCards">
+
+                    </div>
+                </div>
+                <div id="tongyong2" class="tab-pane fade">
+                    <p>生成银行卡</p>
+                    请选择银行卡类型：
+                    <select name="" id="selectBankCards">
+                        <option value="">请选择</option>
+                        <option value="PCBC">建设银行</option>
+                        <option value="BJCN">北京银行</option>
+                        <option value="CMBC">招商银行</option>
+                        <option value="GDBK">广发银行</option>
+                        <option value="ICBK">工商银行</option>
+                        <option value="EVER">光大银行</option>
+                        <option value="FJIB">兴业银行</option>
+                        <option value="BKCH">中国银行</option>
+                        <option value="PCBC">建设银行</option>
+                        <option value="SZDB">平安银行</option>
+                        <option value="SPDB">浦发银行</option>
+                        <option value="COMM">交通银行</option>
+                        <option value="CIBK">中信银行</option>
+                        <option value="MSBC">民生银行</option>
+                        <option value="ABOC">农业银行</option>
+                        <option value="PSBC">邮储银行</option>
+                        <option value="HXBK">华夏银行</option>
+                    </select>
+                    <br>
+                    请选择生成数量：<input id="bankCardsNum" type="text" value="5">
+                    <br>
+                    <button id="getBnakCards">获取</button>
+                    <h5>结果如下：</h5>
+                    <div id="showBankCards">
+
+                    </div>
+                </div>
+                <div id="tongyong3" class="tab-pane fade">
+                    <p>添加借款人</p>
+                </div>
+                <div id="tongyong4" class="tab-pane fade">
+                    <p>计算日期</p>
+                    开始日期：<input type="datetime-local"><br><br>
+                    结束日期：<input type="datetime-local"><br><br>
+                    <button style="background: #337ab7;color:#fff">计算</button><br><br>
+                    结果：
+<!--                    <table>-->
+<!--                        <tr>-->
+<!--                            <td valign="top">-->
+<!--                                <div id="accordion">-->
+<!--                                    <h3>时间查询</h3>-->
+<!--                                </div>-->
+<!--                            </td>-->
+<!--                            <td style="width: 85%;padding:0px;'">-->
+<!--                                <div id="tabs">-->
+<!--                                    <ul>-->
+<!--                                        <li><a href="#tabs-1">日期Calc</a></li>-->
+<!--                                        <li><a href="#tabs-2">天数Calc</a></li>-->
+<!--                                    </ul>-->
+<!--                                    <div id="tabs-1">-->
+<!--                                        <table id="tblTab1">-->
+<!--                                            <tr>-->
+<!--                                                <td>起始日期</td><td><input id="txtStart" type="text" value="2020-11-10"></td>-->
+<!--                                            </tr>-->
+<!--                                            <tr>-->
+<!--                                                <td>结束日期</td><td><input id="txtEnd" type="text" value="2020-12-10"></td>-->
+<!--                                            </tr>-->
+<!--                                            <tr>-->
+<!--                                                <td><input value="计算" type="button" onclick="calc();"></td>-->
+<!--                                            </tr>-->
+<!--                                        </table>-->
+<!--                                    </div>-->
+<!--                                    <div id="tabs-2">-->
+<!--                                        <table id="tblTab2" style="display: none;">-->
+<!--                                            <tr>-->
+<!--                                                <td>起始日期</td><td><input id="txtDateStart" type="text" value="2020-11-10"></td>-->
+<!--                                            </tr>-->
+<!--                                            <tr>-->
+<!--                                                <td>相隔天数</td><td><input id="txtInterval" type="text" value="30"></td>-->
+<!--                                            </tr>-->
+<!--                                            <tr>-->
+<!--                                                <td><input value="计算" type="button" onclick="calcDate()"></td>-->
+<!--                                            </tr>-->
+<!--                                        </table>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </td>-->
+<!--                        </tr>-->
+<!--                    </table>-->
+                </div>
+            </div>
+            <div id="myMenu">
+                <div><a href="">我的</a></div>
+                <div><a href="">建议</a></div>
+                <div><a href="">查看</a></div>
+                <div><a href="">设置</a></div>
+            </div>
+        </section>
+        <footer>
+            <div>很抱歉，我们不接受任何意见。。。😏</div>
+        </footer>
+        <span></span>
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/main.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-datetimepicker.js"></script>
+<script src="js/bootstrap-datetimepicker.min.js"></script>
+<script src="js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="js/locales/bootstrap-datetimepicker.fr.js"></script>
+<script>
+
+</script>
+</body>
+</html>
