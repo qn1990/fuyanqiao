@@ -16,6 +16,11 @@ function getValueById(id){
 }
 // 侧边栏收缩
 
+// 侧边栏收起展开
+$('.panel-heading').click(function(){
+    $(this).siblings().slideToggle('slow');
+
+});
 // 修改散标应还款时间
 function product() {
     $.ajax({
