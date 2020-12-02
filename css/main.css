@@ -75,7 +75,7 @@ section{
     background: rgba(0,0,0,0.8);
 }
 .navShow{
-
+    background: rgba(0,0,0,0.8);
 }
 #myNav a[data-toggle="tab"]{
     color:#999999;
@@ -90,6 +90,10 @@ section{
     border:1px solid #ddd;
     padding:10px 10px;
     margin:0;
+}
+#wangcai a,#yunkong a,#xiaojin a,#tongyong a{
+    display: block;
+    margin: 0;
 }
 #wangcai p{
     background: #fcf8e3;
@@ -110,6 +114,9 @@ section{
     height:100%;
     /*border:1px solid #ddd;*/
     background: rgba(255,255,255,0.5);
+}
+#myContent>div{
+    overflow-y: scroll;
 }
 #coverPa{
     position: relative;
