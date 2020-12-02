@@ -14,13 +14,22 @@ function calcDate(){
 function getValueById(id){
     return document.getElementById(id).value
 }
-// 侧边栏收缩
+// 侧边栏整体收缩展开
 
-// 侧边栏收起展开
+// 侧边栏标题收缩展开
 $('.panel-heading').click(function(){
     $(this).siblings().slideToggle('slow');
 
 });
+// 侧边栏点击/悬浮变色{
+$(".my-group").on("click","p",function(){
+        $(this).next().toggleClass("navShow")
+            .siblings(".navShow")
+            .removeClass("navShow")
+    });
+// $('#my-group p').mouseover(function () {
+//     $(this).css("background","rgba(0,0,0,0.8)");
+// });
 // 修改散标应还款时间
 function product() {
     $.ajax({
