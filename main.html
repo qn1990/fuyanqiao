@@ -112,7 +112,8 @@
             </div>
             <div id="myContent" class="tab-content">
                 <div id="coverPa" class="tab-pane in active">
-                    <div>👈请选择目标功能</div>
+                    <div>👈请选择目标功能 <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;❀❀❀❀❀</div>
+<!--                    <div></div>-->
                 </div>
                 <div id="wangcai1" class="tab-pane fade">
                     <div>
@@ -191,7 +192,50 @@
                     <p>标的解冻 </p>
                 </div>
                 <div id="yunkong1" class="tab-pane fade">
-                    <p>生成报单 </p>
+                    <p>请输入如下内容后点击生成 : </p>
+                    <div>
+                        <table align="center" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td>业务员登录授权（authorization）</td>
+                                <td>
+                                    <input id="authorization" type="text" placeholder="请要创建报单的业务原authorization">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>借款人姓名：</td>
+                                <td><input id="billCustomerName" type="text" placeholder="借款人姓名"></td>
+                            </tr>
+                            <tr>
+                                <td>借款人手机号：</td>
+                                <td><input id="billCustomerMobile" type="text" placeholder="借款人手机号"></td>
+                            </tr>
+                            <tr>
+                                <td>身份证号:</td>
+                                <td><input id="idCard" type="text" placeholder="借款人身份证"></td>
+                            </tr>
+                            <tr>
+                                <td>借款金额(万元):</td>
+                                <td><input id="borrowAmount" type="text" placeholder="借款金额"></td>
+                            </tr>
+                            <tr>
+                                <td>资金端</td>
+                                <td>
+                                    <select name="" id="funding">
+                                        <option value="bohaitrust">渤海信托</option>
+                                        <option value="wangcai1111">旺财资金服务</option>
+                                        <option value="xiamentrust">厦门信托</option>
+                                        <option value="91diandang">九一典当</option>
+                                        <option value="risk_margin">风险准备金</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button id="getBill">生成</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
                 <div id="yunkong2" class="tab-pane fade">
                     <p>生成账单 </p>
