@@ -31,7 +31,7 @@ $('.panel-heading').click(function(){
 //     $(this).css("background","rgba(0,0,0,0.8)");
 // });
 // 定义ip
-var ip='http://192.168.0.149';
+var ip='http://192.168.0.149:5555';
 // 修改散标应还款时间
 function product() {
     $.ajax({
