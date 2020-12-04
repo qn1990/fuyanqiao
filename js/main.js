@@ -72,7 +72,7 @@ function hexinUserDrop() {
 $("#getIdCards").click(function getIdCards() {
     $('#showIdCards').html('');
     $.ajax({
-        url:iip+'/test/idcards?num='+$('#idCardsNum').val(),
+        url:ip+'/test/idcards?num='+$('#idCardsNum').val(),
         type:'get',
         dataType:'jsonp',
         dataType:'JSON',
