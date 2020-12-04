@@ -22,18 +22,20 @@ $('.panel-heading').click(function(){
 
 });
 // 侧边栏点击/悬浮变色{
-$(".my-group").on("click","p",function(){
-        $(this).next().toggleClass("navShow")
-            .siblings(".navShow")
-            .removeClass("navShow")
-    });
+// $(".my-group").on("click","p",function(){
+//         $(this).next().toggleClass("navShow")
+//             .siblings(".navShow")
+//             .removeClass("navShow")
+//     });
 // $('#my-group p').mouseover(function () {
 //     $(this).css("background","rgba(0,0,0,0.8)");
 // });
+// 定义ip
+var ip='http://10.0.0.104:5555';
 // 修改散标应还款时间
 function product() {
     $.ajax({
-        url: "http://192.168.10.35:5555/test/product?productnid=" + $("#productNid").val() + "&repaytime=" + $("#repayTime").val(),
+        url: ip+"/test/product?productnid=" + $("#productNid").val() + "&repaytime=" + $("#repayTime").val(),
         type: 'get',
         dataType: 'jsonp',
         dataType: "JSON",
@@ -45,7 +47,7 @@ function product() {
 // 修改优先出借应还款时间
 function priority() {
     $.ajax({
-        url:"http://192.168.10.35:5555/test/priority?prioritynid="+$('#priorityNid').val()+'&repaytime='+$('#priorityRepayTime').val(),
+        url:ip+"/test/priority?prioritynid="+$('#priorityNid').val()+'&repaytime='+$('#priorityRepayTime').val(),
         type:'get',
         dataType:'jsonp',
         dataType:'JSON',
@@ -57,8 +59,10 @@ function priority() {
 // 删除核心用户
 function hexinUserDrop() {
     $.ajax({
-        url:'http://192.168.10.35:5555/test/drop?userphone='+$('#hexinUserPhone').val(),
+        url:ip+'/test/drop?userphone='+$('#hexinUserPhone').val(),
         type:'get',
+        dataType:'jsonp',
+        dataType:'JSON',
         success:function(datas){
             console.log(datas);
         }
@@ -68,7 +72,7 @@ function hexinUserDrop() {
 $("#getIdCards").click(function getIdCards() {
     $('#showIdCards').html('');
     $.ajax({
-        url:'http://192.168.10.35:5555/test/idcards?num='+$('#idCardsNum').val(),
+        url:iip+'/test/idcards?num='+$('#idCardsNum').val(),
         type:'get',
         dataType:'jsonp',
         dataType:'JSON',
@@ -91,7 +95,7 @@ $("#getIdCards").click(function getIdCards() {
 $('#getBnakCards').click(function getBankCards() {
     $('#showBankCards').html('');
     $.ajax({
-        url:'http://192.168.10.35:5555/test/bankcards?num='+$("#bankCardsNum").val() +'&bankcode='
+        url:ip+'/test/bankcards?num='+$("#bankCardsNum").val() +'&bankcode='
             +$("#selectBankCards option:selected").val(),
         type:'get',
         dataType:'jsonp',
@@ -106,6 +110,28 @@ $('#getBnakCards').click(function getBankCards() {
             })
             str+='</tbody></table>';
             $('#showBankCards').append(str);
+        }
+    })
+});
+// 生成报单
+$('#getBill').click(function getBill() {
+    var da={
+        authorization:$('#authorization').val(),
+        billCustomerMobile:$("#billCustomerMobile").val(),idCard:$("#idCard").val(),
+        billCustomerName:$('#billCustomerName').val(),funding:$("#funding option:selected").val(),
+        borrowAmount:$('#borrowAmount').val()
+    };
+    $.ajax({
+        url:ip+'/test/billAdd',
+        type:'post',
+        data:JSON.stringify(da),
+        dataType:'JSON',
+        success:function(data){
+            var billId=data.billId;
+            console.log(data);
+            var show='';
+            show+='本次生成报单id:'+billId;
+            $('#yunkong1').append(show);
         }
     })
 });
@@ -141,3 +167,4 @@ jQuery(document).ready(function($) {
     });
  });
 })
+// page.smartNavigation="true"
