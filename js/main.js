@@ -31,7 +31,7 @@ $('.panel-heading').click(function(){
 //     $(this).css("background","rgba(0,0,0,0.8)");
 // });
 // 定义ip
-var ip='http://10.0.0.104:5555';
+var ip='https://192.168.0.149';
 // 修改散标应还款时间
 function product() {
     $.ajax({
@@ -116,10 +116,9 @@ $('#getBnakCards').click(function getBankCards() {
 // 生成报单
 $('#getBill').click(function getBill() {
     var da={
-        authorization:$('#authorization').val(),
-        billCustomerMobile:$("#billCustomerMobile").val(),idCard:$("#idCard").val(),
-        billCustomerName:$('#billCustomerName').val(),funding:$("#funding option:selected").val(),
-        borrowAmount:$('#borrowAmount').val()
+        authorization:$('#authorization').val(), billCustomerMobile:$("#billCustomerMobile").val(),
+        idCard:$("#idCard").val(), billCustomerName:$('#billCustomerName').val(),
+        funding:$("#funding option:selected").val(), borrowAmount:$('#borrowAmount').val()
     };
     $.ajax({
         url:ip+'/test/billAdd',
