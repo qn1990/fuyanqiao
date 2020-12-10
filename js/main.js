@@ -132,16 +132,26 @@ $('#getBill').click(function getBill() {
 // 日期计算
 $("#count1").click(function countDays(){
         $("#result1").html('');
-        var start=new Date($("#startDate").val());
+        var str=$("#startDate2").val();
+        if(str==''){
+            var start=new Date()
+        }else{
+            var start=new Date($("#startDate2").val());
+        }
         var end=new Date($("#endDate").val());
         var days=end.getTime()-start.getTime();
-        var day=parseInt(days/(1000*60*60*24))
-        $("#result1").append(day)
+        var day=parseInt(days/(1000*60*60*24))+1;
+        $("#result1").append(day);
         }
 );
 $("#count2").click(function countEndDate(){
         $("#result2").html("");
-        var start=new Date($("#startDate2").val());
+        var str=$("#startDate2").val();
+        if(str==''){
+            var start=new Date()
+        }else{
+            var start=new Date($("#startDate2").val());
+        }
         var days=$("#addTime").val();
         var end=Math.abs(start)+days*(24*60*60*1000);
         var endDate=new Date(end);
@@ -151,6 +161,24 @@ $("#count2").click(function countEndDate(){
         var newDate=year+"-"+month+"-"+day;
         $("#result2").append(newDate);
 });
+//弹出相应功能说命
+$("#instruction").click(function () {
+        var id=$("#myContent div[class~=in]").attr('id');
+        if(id=="wangcai1"){
+            alert('修改应还款日期');
+        }else if(id=="wangcai2"){
+            alert('修改优先出借应还款日期');
+        }else if(id=="wangcai3"){
+
+        }else if(id=="wangcai4"){
+
+        }else if(id=="yunkong1"){
+
+        }else if(id=="tongyong1"){
+
+        }
+    }
+);
 // 页面点击小心心特效
 var a_idx = 0;
 jQuery(document).ready(function($) {
