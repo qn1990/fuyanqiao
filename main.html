@@ -297,9 +297,9 @@
                     <p>添加借款人</p>
                 </div>
                 <div id="tongyong4" class="tab-pane fade">
-                    <ul class="nav nav-pills nav-justified">
-                        <li class="active"><a href="#page1" data-toggle="tab">天数相差</a></li>
-                        <li><a href="#page2" data-toggle="tab">加天数</a></li>
+                    <ul class="nav nav-pills nav-justified" style="margin-top:15px">
+                        <li class="active"><a href="#page1" data-toggle="tab">相差天数计算</a></li>
+                        <li><a href="#page2" data-toggle="tab">加减天数计算</a></li>
                     </ul>
                     <div class="tab-content" style="margin:5% 35%">
                         <div id="page1" class="tab-pane fade in active">
@@ -316,18 +316,24 @@
                             目标日期：<span id="result2"></span>
                         </div>
                     </div>
-
+                    <div id="calc" class="instuction">
+<!--                        <img src="img/qipao1.png" alt="">-->
+                        说明：<br>
+                        1.开始日期不选择，则默认为当天;<br>
+                        2.若计算减天数，则有优先天数输入负数，如：-1 <br>
+                        3.有效天数只能输入整数
+                    </div>
                 </div>
             </div>
             <div id="myMenu">
                 <div><a href="detail.html">我的</a></div>
                 <div><a href="detail.html">建议</a></div>
                 <div><a href="detail.html">查看</a></div>
-                <div><a href="detail.html">设置</a></div>
+                <div id="instruction"><a>说明</a></div>
             </div>
         </section>
         <footer>
-            <div>很抱歉，我们不接受任何意见。。。😏</div>
+            <div>很抱歉，不接受任何意见||建议。。。😏</div>
         </footer>
         <span></span>
     </div>
