@@ -131,22 +131,25 @@ $('#getBill').click(function getBill() {
 });
 // 日期计算
 $("#count1").click(function countDays(){
+        $("#result1").html('');
         var start=new Date($("#startDate").val());
         var end=new Date($("#endDate").val());
         var days=end.getTime()-start.getTime();
         var day=parseInt(days/(1000*60*60*24))
-        $("#page1").append(day)
-    }
+        $("#result1").append(day)
+        }
 );
 $("#count2").click(function countEndDate(){
-    var start=new Date($("#startDate2").val());
-    console.log(start);
-    var days=$("#addTime").val();
-    var end=start+(86400)*days;
-    var e= new Date(end)
-    console.log(e.getDate());
-    // var end=start.setDate(start.getDate()+days);
-    // console.log(new Date(start));
+        $("#result2").html("");
+        var start=new Date($("#startDate2").val());
+        var days=$("#addTime").val();
+        var end=Math.abs(start)+days*(24*60*60*1000);
+        var endDate=new Date(end);
+        var year=endDate.getFullYear();
+        var month=endDate.getMonth();
+        var day=endDate.getDate();
+        var newDate=year+"-"+month+"-"+day;
+        $("#result2").append(newDate);
 });
 // 页面点击小心心特效
 var a_idx = 0;
