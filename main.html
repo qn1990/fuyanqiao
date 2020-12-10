@@ -32,7 +32,7 @@
                             </div>
                         </div>
                         <div id="wangcai" class="collapse in panel-body"><!--加in默认展开-->
-                            <p class="" data-toggle="item">
+                            <p data-toggle="item">
                                 <a href="#wangcai1" data-toggle="tab">修改散标应还日期</a>
                             </p>
                             <p data-toggle="item">
@@ -297,54 +297,32 @@
                     <p>添加借款人</p>
                 </div>
                 <div id="tongyong4" class="tab-pane fade">
-                    <p>计算日期</p>
-                    开始日期：<input type="datetime-local"><br><br>
-                    结束日期：<input type="datetime-local"><br><br>
-                    <button style="background: #337ab7;color:#fff">计算</button><br><br>
-                    结果：
-<!--                    <table>-->
-<!--                        <tr>-->
-<!--                            <td valign="top">-->
-<!--                                <div id="accordion">-->
-<!--                                    <h3>时间查询</h3>-->
-<!--                                </div>-->
-<!--                            </td>-->
-<!--                            <td style="width: 85%;padding:0px;'">-->
-<!--                                <div id="tabs">-->
-<!--                                    <ul>-->
-<!--                                        <li><a href="#tabs-1">日期Calc</a></li>-->
-<!--                                        <li><a href="#tabs-2">天数Calc</a></li>-->
-<!--                                    </ul>-->
-<!--                                    <div id="tabs-1">-->
-<!--                                        <table id="tblTab1">-->
-<!--                                            <tr>-->
-<!--                                                <td>起始日期</td><td><input id="txtStart" type="text" value="2020-11-10"></td>-->
-<!--                                            </tr>-->
-<!--                                            <tr>-->
-<!--                                                <td>结束日期</td><td><input id="txtEnd" type="text" value="2020-12-10"></td>-->
-<!--                                            </tr>-->
-<!--                                            <tr>-->
-<!--                                                <td><input value="计算" type="button" onclick="calc();"></td>-->
-<!--                                            </tr>-->
-<!--                                        </table>-->
-<!--                                    </div>-->
-<!--                                    <div id="tabs-2">-->
-<!--                                        <table id="tblTab2" style="display: none;">-->
-<!--                                            <tr>-->
-<!--                                                <td>起始日期</td><td><input id="txtDateStart" type="text" value="2020-11-10"></td>-->
-<!--                                            </tr>-->
-<!--                                            <tr>-->
-<!--                                                <td>相隔天数</td><td><input id="txtInterval" type="text" value="30"></td>-->
-<!--                                            </tr>-->
-<!--                                            <tr>-->
-<!--                                                <td><input value="计算" type="button" onclick="calcDate()"></td>-->
-<!--                                            </tr>-->
-<!--                                        </table>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </td>-->
-<!--                        </tr>-->
-<!--                    </table>-->
+                    <ul class="nav nav-pills nav-justified">
+                        <li class="active"><a href="#page1" data-toggle="tab">天数相差</a></li>
+                        <li><a href="#page2" data-toggle="tab">加天数</a></li>
+                        <li><a href="#page3" data-toggle="tab">减天数</a></li>
+                    </ul>
+                    <div class="tab-content" style="margin:5% 35%">
+                        <div id="page1" class="tab-pane fade in active">
+                            开始日期：<input id="startDate" type="datetime-local"><br><br>
+                            结束日期：<input id="endDate" type="datetime-local"><br><br>
+                            <button id="count1" style="background: #337ab7;color:#fff">计算</button><br><br>
+                            结果：
+                        </div>
+                        <div id="page2" class="tab-pane fade">
+                            开始日期：<input id="startDate2" type="datetime-local"><br><br>
+                            有效天数：<input id="addTime" type="text"><br><br>
+                            <button id="count2" style="background: #337ab7;color:#fff">计算</button><br><br>
+                            目标日期：
+                        </div>
+                        <div id="page3" class="tab-pane fade">
+                            开始日期：<input type="datetime-local"><br><br>
+                            结束日期：<input type="datetime-local"><br><br>
+                            <button id="count3" style="background: #337ab7;color:#fff">计算</button><br><br>
+                            结果：
+                        </div>
+                    </div>
+
                 </div>
             </div>
             <div id="myMenu">
@@ -370,6 +348,7 @@
 <!--<script src="js/locales/bootstrap-datetimepicker.zh-CN.js"></script>-->
 <!--<script src="js/locales/bootstrap-datetimepicker.fr.js"></script>-->
 <script>
+
 
 </script>
 </body>
