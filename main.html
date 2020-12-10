@@ -300,7 +300,6 @@
                     <ul class="nav nav-pills nav-justified">
                         <li class="active"><a href="#page1" data-toggle="tab">天数相差</a></li>
                         <li><a href="#page2" data-toggle="tab">加天数</a></li>
-                        <li><a href="#page3" data-toggle="tab">减天数</a></li>
                     </ul>
                     <div class="tab-content" style="margin:5% 35%">
                         <div id="page1" class="tab-pane fade in active">
@@ -308,18 +307,13 @@
                             结束日期：<input id="endDate" type="datetime-local"><br><br>
                             <button id="count1" style="background: #337ab7;color:#fff">计算</button><br><br>
                             结果：
+                            <span id="result1"></span>
                         </div>
                         <div id="page2" class="tab-pane fade">
                             开始日期：<input id="startDate2" type="datetime-local"><br><br>
-                            有效天数：<input id="addTime" type="text"><br><br>
+                            有效天数：<input id="addTime" type="text" placeholder="若减天数请输入负数"><br><br>
                             <button id="count2" style="background: #337ab7;color:#fff">计算</button><br><br>
-                            目标日期：
-                        </div>
-                        <div id="page3" class="tab-pane fade">
-                            开始日期：<input type="datetime-local"><br><br>
-                            结束日期：<input type="datetime-local"><br><br>
-                            <button id="count3" style="background: #337ab7;color:#fff">计算</button><br><br>
-                            结果：
+                            目标日期：<span id="result2"></span>
                         </div>
                     </div>
 
