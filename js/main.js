@@ -31,7 +31,7 @@ $('.panel-heading').click(function(){
 //     $(this).css("background","rgba(0,0,0,0.8)");
 // });
 // 定义ip
-var ip='http://192.168.0.149:5555';
+var ip='http://10.0.0.104:5555';
 // 修改散标应还款时间
 function product() {
     $.ajax({
@@ -40,7 +40,7 @@ function product() {
         dataType: 'jsonp',
         dataType: "JSON",
         success: function (datas) {
-            alert(datas);
+            alert("修改成功");
         }
     })
 }
@@ -52,8 +52,8 @@ function priority() {
         dataType:'jsonp',
         dataType:'JSON',
         success:function(datas){
-            console.log(datas);
-    }
+            alert("修改成功");
+        }
     })
 }
 // 删除核心用户
@@ -64,7 +64,6 @@ function hexinUserDrop() {
         dataType:'jsonp',
         dataType:'JSON',
         success:function(datas){
-            console.log(datas);
         }
     })
 }
@@ -78,8 +77,6 @@ $("#getIdCards").click(function getIdCards() {
         dataType:'JSON',
         success:function (datas) {
             var cards=datas.cards||{};
-            console.log(datas);
-            console.log(cards);
             var str='';
             str+='<table><thead><tr><th>序号</th><th>证件号</th></tr></thead><tbody>';
             // str+='<table>';
@@ -101,7 +98,6 @@ $('#getBnakCards').click(function getBankCards() {
         dataType:'jsonp',
         dataType:'JSON',
         success:function (data) {
-            console.log(data);
             var cards=data.cards||{};
             var str='';
             str+='<table><thead><tr><th>序号</th><th>银行卡</th></tr></thead><tbody>';
@@ -127,12 +123,30 @@ $('#getBill').click(function getBill() {
         dataType:'JSON',
         success:function(data){
             var billId=data.billId;
-            console.log(data);
             var show='';
             show+='本次生成报单id:'+billId;
             $('#yunkong1').append(show);
         }
     })
+});
+// 日期计算
+$("#count1").click(function countDays(){
+        var start=new Date($("#startDate").val());
+        var end=new Date($("#endDate").val());
+        var days=end.getTime()-start.getTime();
+        var day=parseInt(days/(1000*60*60*24))
+        $("#page1").append(day)
+    }
+);
+$("#count2").click(function countEndDate(){
+    var start=new Date($("#startDate2").val());
+    console.log(start);
+    var days=$("#addTime").val();
+    var end=start+(86400)*days;
+    var e= new Date(end)
+    console.log(e.getDate());
+    // var end=start.setDate(start.getDate()+days);
+    // console.log(new Date(start));
 });
 // 页面点击小心心特效
 var a_idx = 0;
@@ -147,8 +161,7 @@ jQuery(document).ready(function($) {
     );
     var $i = $("<span/>").text(a[a_idx]);
     a_idx = (a_idx + 1) % a.length;
-    var x = e.pageX,
-    y = e.pageY;
+    var x = e.pageX, y = e.pageY;
     $i.css({
          // "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
          "top": y - 20,
