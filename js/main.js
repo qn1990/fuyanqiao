@@ -146,7 +146,7 @@ $("#count2").click(function countEndDate(){
         var end=Math.abs(start)+days*(24*60*60*1000);
         var endDate=new Date(end);
         var year=endDate.getFullYear();
-        var month=endDate.getMonth();
+        var month=endDate.getMonth()+1;
         var day=endDate.getDate();
         var newDate=year+"-"+month+"-"+day;
         $("#result2").append(newDate);
