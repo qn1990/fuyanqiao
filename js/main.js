@@ -1,19 +1,3 @@
-function calc(){
-    var start=getValueById('txtStart');
-
-    var end=getValueById('txtEnd');
-    alert((new Date(end).getTime()-new Date(start).getTime())/24/60/60/1000);
-}
-
-function calcDate(){
-    var start=getValueById('txtDateStart');
-
-    var end=getValueById('txtInterval');
-    alert(new Date(new Date(start).getTime() + end * 24 * 60 * 60 * 1000).toISOString().substr(0, 10));
-}
-function getValueById(id){
-    return document.getElementById(id).value
-}
 // 侧边栏整体收缩展开
 
 // 侧边栏标题收缩展开
@@ -22,16 +6,14 @@ $('.panel-heading').click(function(){
 
 });
 // 侧边栏点击/悬浮变色{
-// $(".my-group").on("click","p",function(){
-//         $(this).next().toggleClass("navShow")
-//             .siblings(".navShow")
-//             .removeClass("navShow")
-//     });
-// $('#my-group p').mouseover(function () {
-//     $(this).css("background","rgba(0,0,0,0.8)");
-// });
+$("#myNav p").mouseover=function () {
+    // $(this).css("font")
+}
+
 // 定义ip
-var ip='http://192.168.0.149:5555';
+// var ip='http://192.168.0.149:5555';
+var ip='http://192.168.10.35:5555';
+// var ip='http://10.0.0.104:5555';
 // 修改散标应还款时间
 function product() {
     $.ajax({
@@ -67,6 +49,46 @@ function hexinUserDrop() {
         }
     })
 }
+// 生成报单
+$('#getBill').click(function getBill() {
+    var da={
+        authorization:$('#authorization').val(), billCustomerMobile:$("#billCustomerMobile").val(),
+        idCard:$("#idCard").val(), billCustomerName:$('#billCustomerName').val(),
+        funding:$("#funding option:selected").val(), borrowAmount:$('#borrowAmount').val()
+    };
+    $.ajax({
+        url:ip+'/test/billAdd',
+        type:'post',
+        data:JSON.stringify(da),
+        dataType:'JSON',
+        success:function(data){
+            var billId=data.billId;
+            var show='';
+            show+='本次生成报单id:'+billId;
+            $('#yunkong1').append(show);
+        }
+    })
+});
+// 修改消金还款时间
+$("#eProductRepayTime").click(function eProductRepayTime(){
+    var p=$("#period").val()
+    p=parseInt(p);
+    var date=new Date($("#eRepayTime").val());
+    console.log(date);
+    date=date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate()+"+"+
+        date.getHours()+':'+date.getMinutes()+':00';
+    $.ajax({
+        url:ip+"/test/ecmrepay?eproductnid="+$("#eProductNid").val()+"&erepaytime="+date
+            +"&period="+p,
+        type:'get',
+        dataType: 'jsonp',
+        dataType: "JSON",
+        success:function(data){
+            alert(data.msg);
+        }
+
+    })
+});
 // 获取证件号
 $("#getIdCards").click(function getIdCards() {
     $('#showIdCards').html('');
@@ -89,7 +111,7 @@ $("#getIdCards").click(function getIdCards() {
     })
 })
 // 获取银行卡号
-$('#getBnakCards').click(function getBankCards() {
+$('#getBankCards').click(function getBankCards() {
     $('#showBankCards').html('');
     $.ajax({
         url:ip+'/test/bankcards?num='+$("#bankCardsNum").val() +'&bankcode='
@@ -109,26 +131,6 @@ $('#getBnakCards').click(function getBankCards() {
         }
     })
 });
-// 生成报单
-$('#getBill').click(function getBill() {
-    var da={
-        authorization:$('#authorization').val(), billCustomerMobile:$("#billCustomerMobile").val(),
-        idCard:$("#idCard").val(), billCustomerName:$('#billCustomerName').val(),
-        funding:$("#funding option:selected").val(), borrowAmount:$('#borrowAmount').val()
-    };
-    $.ajax({
-        url:ip+'/test/billAdd',
-        type:'post',
-        data:JSON.stringify(da),
-        dataType:'JSON',
-        success:function(data){
-            var billId=data.billId;
-            var show='';
-            show+='本次生成报单id:'+billId;
-            $('#yunkong1').append(show);
-        }
-    })
-});
 // 日期计算
 $("#count1").click(function countDays(){
         $("#result1").html('');
@@ -142,8 +144,7 @@ $("#count1").click(function countDays(){
         var days=end.getTime()-start.getTime();
         var day=parseInt(days/(1000*60*60*24))+1;
         $("#result1").append(day);
-        }
-);
+        });
 $("#count2").click(function countEndDate(){
         $("#result2").html("");
         var str=$("#startDate2").val();
@@ -161,7 +162,7 @@ $("#count2").click(function countEndDate(){
         var newDate=year+"-"+month+"-"+day;
         $("#result2").append(newDate);
 });
-//弹出相应功能说命
+//查看说明
 $("#instruction").click(function () {
         var id=$("#myContent div[class~=in]").attr('id');
         if(id=="wangcai1"){
@@ -177,8 +178,7 @@ $("#instruction").click(function () {
         }else if(id=="tongyong1"){
 
         }
-    }
-);
+    });
 // 页面点击小心心特效
 var a_idx = 0;
 jQuery(document).ready(function($) {
