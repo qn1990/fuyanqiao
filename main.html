@@ -24,7 +24,7 @@
         <section>
             <div id="myNav" class="panel-group">
                 <div id="my-group">
-                    <div class="panel panel-warning">
+                    <div class="panel panel-primary">
                         <div class="panel-heading">
                             <div class="panel-title">
                                 <a class="glyphicon glyphicon-thumbs-up" href="#"></a>&nbsp;&nbsp;
@@ -47,7 +47,7 @@
                         </div>
                     </div>
 
-                    <div class="panel panel-danger">
+                    <div class="panel panel-primary">
                         <div class="panel-heading">
                             <div class="panel-title" >
                                 <a class="glyphicon glyphicon-thumbs-up"></a>&nbsp;&nbsp;
@@ -56,7 +56,7 @@
                         </div>
                         <div id="yunkong" class="collapse panel-body">
                             <p data-toggle="item">
-                                <a data-toggle="tab" href="#yunkong1">生成报单</a>
+                                <a data-toggle="tab" href="#yunkong1">报单添加</a>
                             </p>
                             <p data-toggle="item">
                                 <a data-toggle="tab" href="#yunkong2">生成账单</a>
@@ -67,7 +67,7 @@
                         </div>
                     </div>
 
-                    <div class="panel panel-success">
+                    <div class="panel panel-primary">
                         <div class="panel-heading">
                             <div class="panel-title">
                                 <a class="glyphicon glyphicon-thumbs-up" href=""></a>&nbsp;&nbsp;
@@ -76,7 +76,7 @@
                         </div>
                         <div id="xiaojin" class="collapse panel-body">
                             <p data-toggle="item" href="">
-                                <a data-toggle="tab" href="#xiaojin1">生成报单</a>
+                                <a data-toggle="tab" href="#xiaojin1">修改还款时间</a>
                             </p>
                             <p data-toggle="item" href="">
                                 <a data-toggle="tab" href="#xiaojin2">生成账单</a>
@@ -116,125 +116,55 @@
 <!--                    <div></div>-->
                 </div>
                 <div id="wangcai1" class="tab-pane fade">
-                    <div>
-                        <table align="center" border="0" cellspacing="0" cellpadding="0">
-                            <tr>
-                                <th align="right">功能：</th>&nbsp;
-                                <td>
-                                    修改标的应还款日期
-                                </td>
-                            </tr>
-                            <tr>
-                                <th align="right">标的号:</th>&nbsp;
-                                <td>
-                                    <input id="productNid" type="text" placeholder="请输入标的号" required><br>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th align="right">还款日期:</th>
-                                <td>
-                                    <input id="repayTime" type="text" placeholder="请输入修改后的时间" required>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th></th>
-                                <td>
-                                    <button onclick="product();" style="background: #fcf8e3;color:#999">提交</button>
-                                </td>
-                            </tr>
-                        </table>
+                    <div class="tag">散标还款日</div>
+                    <div class="dataArea">
+                        <div class="query">
+                            标的号：<input id="productNid" type="text">
+                            预期还款日：<input id="repayTime" type="text">
+                            <span onclick="product();">确定</span>
+                        </div>
                     </div>
                 </div>
                 <div id="wangcai2" class="tab-pane fade">
-                    <div>
-                        <table align="center" cellspacing="0" style="table-layout: fixed">
-                            <tr style="width:100px">
-                                <th align="right">功能：</th>&nbsp;
-                                <td>
-                                    修改优先出借应还款日期
-                                </td>
-                            </tr>
-                            <tr>
-                                <th align="right">标的号:</th>&nbsp;
-                                <td>
-                                    <input id="priorityNid" type="text" placeholder="请输入标的号" required><br>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th align="right">还款日期:</th>
-                                <td>
-                                    <input id="priorityRepayTime" type="text" placeholder="请输入修改后的时间" required>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th></th>
-                                <td>
-                                    <button onclick="priority();" style="background: #fcf8e3;color:#999">提交</button>
-                                </td>
-                            </tr>
-                        </table>
+                    <div class="tag">优先出借还款日</div>
+                    <div class="dataArea">
+                        <div class="query">
+                            标的号：<input id="priorityNid" type="text">
+                            预期还款日：<input id="priorityRepayTime" type="text">
+                            <span onclick="priority();">确定</span>
+                        </div>
                     </div>
                 </div>
                 <div id="wangcai3" class="tab-pane fade">
-                    <p>删除核心用户</p>
-                    <table>
-                        <tr>
-                            <td>
-                                <input id="hexinUserPhone" type="text" placeholder="请输入要删除的手机号">
-                            </td>
-                            <td>
-                                <button onclick="hexinUserDrop();" style="background: #fcf8e3;color:#999">提交</button>
-                            </td>
-                        </tr>
-                    </table>
+                    <div class="tag">删除核心用户</div>
+                    <div class="dataArea">
+                        <div class="query">
+                            手机号：<input id="hexinUserPhone" type="text">
+                            <span onclick="hexinUserDrop();">确定</span>
+                        </div>
+                    </div>
                 </div>
                 <div id="wangcai4" class="tab-pane fade">
                     <p>标的解冻 </p>
                 </div>
                 <div id="yunkong1" class="tab-pane fade">
-                    <p>请输入如下内容后点击生成 : </p>
-                    <div>
-                        <table align="center" border="0" cellspacing="0" cellpadding="0">
-                            <tr>
-                                <td>业务员登录授权（authorization）</td>
-                                <td>
-                                    <input id="authorization" type="text" placeholder="请要创建报单的业务原authorization">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>借款人姓名：</td>
-                                <td><input id="billCustomerName" type="text" placeholder="借款人姓名"></td>
-                            </tr>
-                            <tr>
-                                <td>借款人手机号：</td>
-                                <td><input id="billCustomerMobile" type="text" placeholder="借款人手机号"></td>
-                            </tr>
-                            <tr>
-                                <td>身份证号:</td>
-                                <td><input id="idCard" type="text" placeholder="借款人身份证"></td>
-                            </tr>
-                            <tr>
-                                <td>借款金额(万元):</td>
-                                <td><input id="borrowAmount" type="text" placeholder="借款金额"></td>
-                            </tr>
-                            <tr>
-                                <td>资金端</td>
-                                <td>
-                                    <select name="" id="funding">
+                    <div class="tag">报单添加</div>
+                    <div class="dataArea">
+                        <div class="query">
+                            业务员登录授权：<input id="authorization" type="text">
+                            借款人姓名：<input id="billCustomerName" type="text">
+                            借款人手机号：<input id="billCustomerMobile" type="text">
+                            身份证号：<input id="idCard" type="text"><br><br>
+                            借款金额(万元)：<input id="borrowAmount" type="text">
+                            资金端：<select name="" id="funding">
                                         <option value="bohaitrust">渤海信托</option>
                                         <option value="wangcai1111">旺财资金服务</option>
                                         <option value="xiamentrust">厦门信托</option>
                                         <option value="91diandang">九一典当</option>
                                         <option value="risk_margin">风险准备金</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <button id="getBill">生成</button>
-                                </td>
-                            </tr>
-                        </table>
+                                   </select>&nbsp;&nbsp;
+                            <span id="getBill">确定</span>
+                        </div>
                     </div>
                 </div>
                 <div id="yunkong2" class="tab-pane fade">
@@ -244,7 +174,15 @@
                     <p>添加企业 </p>
                 </div>
                 <div id="xiaojin1" class="tab-pane fade">
-                    <p>进件流程 </p>
+                    <div class="tag">修改还款时间</div>
+                    <div class="dataArea">
+                        <div class="query">
+                            订单号：<input id="eProductNid" type="text">
+                            预期还款时间：<input id="eRepayTime" type="datetime-local">
+                            期数：<input id="period" type="text">&nbsp;&nbsp;
+                            <span id="eProductRepayTime">确定</span>
+                        </div>
+                    </div>
                 </div>
                 <div id="xiaojin2" class="tab-pane fade">
                     <p>活体识别 </p>
@@ -253,75 +191,78 @@
                     <p>风控规则 </p>
                 </div>
                 <div id="tongyong1" class="tab-pane fade">
-                    <p>生成证件号 </p>
-                    生成数量：<input id="idCardsNum" type="text" value="2" style="width:30px" readonly>
-                    <button id="getIdCards" style="background: #337ab7;color:#fff">获取</button>
-                    <h5>结果如下：</h5>
-                    <div id="showIdCards">
-
+                    <div class="tag">生成证件号 </div>
+                    <div class="dataArea">
+                        <div class="query">
+                            数量：<input id="idCardsNum" type="text" value="3" readonly>
+                            <span id="getIdCards" sty>获取</span>
+                        </div>
+                        <div id="showIdCards"></div>
                     </div>
                 </div>
                 <div id="tongyong2" class="tab-pane fade">
-                    <p>生成银行卡</p>
-                    请选择银行卡类型：
-                    <select name="" id="selectBankCards">
-                        <option value="">请选择</option>
-                        <option value="PCBC">建设银行</option>
-                        <option value="BJCN">北京银行</option>
-                        <option value="CMBC">招商银行</option>
-                        <option value="GDBK">广发银行</option>
-                        <option value="ICBK">工商银行</option>
-                        <option value="EVER">光大银行</option>
-                        <option value="FJIB">兴业银行</option>
-                        <option value="BKCH">中国银行</option>
-                        <option value="PCBC">建设银行</option>
-                        <option value="SZDB">平安银行</option>
-                        <option value="SPDB">浦发银行</option>
-                        <option value="COMM">交通银行</option>
-                        <option value="CIBK">中信银行</option>
-                        <option value="MSBC">民生银行</option>
-                        <option value="ABOC">农业银行</option>
-                        <option value="PSBC">邮储银行</option>
-                        <option value="HXBK">华夏银行</option>
-                    </select>
-                    <br>
-                    生成数量：<input id="bankCardsNum" type="text" value="2" style="width:30px" readonly>
-                    <br>
-                    <button id="getBnakCards">获取</button>
-                    <h5>结果如下：</h5>
-                    <div id="showBankCards">
-
+                    <div class="tag">生成银行卡号</div>
+                    <div class="dataArea">
+                        <div class="query">
+                            银行卡类型：
+                            <select name="" id="selectBankCards">
+                                <option value="">请选择</option>
+                                <option value="PCBC">建设银行</option>
+                                <option value="BJCN">北京银行</option>
+                                <option value="CMBC">招商银行</option>
+                                <option value="GDBK">广发银行</option>
+                                <option value="ICBK">工商银行</option>
+                                <option value="EVER">光大银行</option>
+                                <option value="FJIB">兴业银行</option>
+                                <option value="BKCH">中国银行</option>
+                                <option value="PCBC">建设银行</option>
+                                <option value="SZDB">平安银行</option>
+                                <option value="SPDB">浦发银行</option>
+                                <option value="COMM">交通银行</option>
+                                <option value="CIBK">中信银行</option>
+                                <option value="MSBC">民生银行</option>
+                                <option value="ABOC">农业银行</option>
+                                <option value="PSBC">邮储银行</option>
+                                <option value="HXBK">华夏银行</option>
+                            </select>
+                            生成数量：<input id="bankCardsNum" type="text" value="3" style="width:30px" readonly>
+                            <span id="getBankCards">获取</span>
+                        </div>
+                        <div id="showBankCards"></div>
                     </div>
                 </div>
                 <div id="tongyong3" class="tab-pane fade">
-                    <p>添加借款人</p>
+                    <div class="tag">添加借款人</div>
+                    <div class="dataArea">
+                        <div class="query"></div>
+                        <div>展示</div>
+                    </div>
                 </div>
                 <div id="tongyong4" class="tab-pane fade">
-                    <ul class="nav nav-pills nav-justified" style="margin-top:15px">
-                        <li class="active"><a href="#page1" data-toggle="tab">相差天数计算</a></li>
-                        <li><a href="#page2" data-toggle="tab">加减天数计算</a></li>
-                    </ul>
-                    <div class="tab-content" style="margin:5% 35%">
-                        <div id="page1" class="tab-pane fade in active">
-                            开始日期：<input id="startDate" type="datetime-local"><br><br>
-                            结束日期：<input id="endDate" type="datetime-local"><br><br>
-                            <button id="count1" style="background: #337ab7;color:#fff">计算</button><br><br>
-                            结果：
-                            <span id="result1"></span>
+                    <div class="tag">日期计算</div>
+                    <div class="dataArea">
+                        <div class="query">
+                            <ul class="nav nav-pills nav-justified" style="margin-top:15px">
+                                <li class="active"><a href="#page1" data-toggle="tab">相差天数计算</a></li>
+                                <li><a href="#page2" data-toggle="tab">加减天数计算</a></li>
+                            </ul>
                         </div>
-                        <div id="page2" class="tab-pane fade">
-                            开始日期：<input id="startDate2" type="datetime-local"><br><br>
-                            有效天数：<input id="addTime" type="text" placeholder="若减天数请输入负数"><br><br>
-                            <button id="count2" style="background: #337ab7;color:#fff">计算</button><br><br>
-                            目标日期：<span id="result2"></span>
+                        <div class="tab-content" style="margin:5% 35%">
+                            <div id="page1" class="tab-pane fade in active">
+                                开始日期：<input id="startDate" type="datetime-local"><br><br>
+                                结束日期：<input id="endDate" type="datetime-local"><br><br>
+                                <button id="count1" style="background: #337ab7;color:#fff">计算</button><br><br>
+                                结果：
+                                <span id="result1"></span>
+                            </div>
+                            <div id="page2" class="tab-pane fade">
+                                开始日期：<input id="startDate2" type="datetime-local"><br><br>
+                                有效天数：<input id="addTime" type="text" placeholder="若减天数请输入负数"><br><br>
+                                <button id="count2" style="background: #337ab7;color:#fff">计算</button><br><br>
+                                目标日期：<span id="result2"></span>
+                            </div>
                         </div>
-                    </div>
-                    <div id="calc" class="instuction">
-<!--                        <img src="img/qipao1.png" alt="">-->
-                        说明：<br>
-                        1.开始日期不选择，则默认为当天;<br>
-                        2.若计算减天数，则有优先天数输入负数，如：-1 <br>
-                        3.有效天数只能输入整数
+                        <div id="calc" class="instuction"></div>
                     </div>
                 </div>
             </div>
@@ -348,7 +289,6 @@
 <!--<script src="js/locales/bootstrap-datetimepicker.zh-CN.js"></script>-->
 <!--<script src="js/locales/bootstrap-datetimepicker.fr.js"></script>-->
 <script>
-
 
 </script>
 </body>
