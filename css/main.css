@@ -25,7 +25,7 @@ body,html{
     border: 1px solid #ddd;
     box-shadow: 5px 5px 10px #000;
 }
-/*********************上导航***********************/
+/*******************************************************上导航*****************************************************/
 header{
     width: 100%;
     height: 10%;
@@ -55,7 +55,7 @@ header>#navContorl{
     font-size: 30px;
     border-right:2px solid #ddd;
 }
-/*!********************正文************************!*/
+/*!***********************************************************正文***************************************************/
 section{
     width: 100%;
     height:90%;
@@ -64,7 +64,7 @@ section{
     display: none;
 }
 
-/************导航*****************/
+/*************************************左导航********************************************/
 #myNav{
     float: left;
     width: 15%;
@@ -78,7 +78,7 @@ section{
     background: rgba(0,0,0,0.8);
 }
 #myNav a[data-toggle="tab"]{
-    color:#999999;
+    color:#337ab7;
 }
 #my-group div[data-toggle] {
     font-weight: bold;
@@ -90,89 +90,105 @@ section{
     border:1px solid #ddd;
     padding:10px 10px;
     margin:0;
+    background: rgba(0,0,0,0.8);
+    color:#337ab7;
 }
 #wangcai a,#yunkong a,#xiaojin a,#tongyong a{
     display: block;
     margin: 0;
 }
-#wangcai p{
-    background: #fcf8e3;
-}
-#yunkong p{
-    background: #f2dede;
-}
-#xiaojin p{
-    background: #dff0d8;
-}
-#tongyong p{
-    background: #337ab7;
-}
-/*************正文*************/
+/*****************************************内容*****************************************/
 #myContent{
     float:left;
     width: 79%;
     height:100%;
     background: rgba(255,255,255,0.5);
 }
+/*内容标题*/
+#myContent div[class='tag']{
+    /*border:1px solid #ddd;*/
+    border-bottom: 30px solid #337ab7;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    height:5%;
+    width:30%;
+    margin-left: 30px;
+    color: #fff;
+    padding:5px 5px;
+    font-weight: bold;
+    text-align: center;
+    padding:6px 1px 0px 1px;
+    font-size: 20px;
+}
+/*内容区域*/
+#myContent div[class='dataArea']{
+    border:1px solid #337ab7;
+    border-radius: 10px;
+    margin-left: 30px;
+    margin-top:0;
+    height:89%;
+    box-shadow: #337ab7 0px 0px 30px 1px inset;
+}
+/*内容查询栏*/
+#myContent div[class='query']{
+    padding:3%;
+}
+/*n内容溢出*/
 #myContent>div{
     overflow-y: scroll;
     height:101%;
 }
-#coverPa{
-    /*position: relative;*/
-}
+/*内容封面*/
 #coverPa div{
     /*position: absolute;*/
     margin-top:15%;
     margin-left:25%;
     font-size: 4em;
 }
-#wangcai1 table{
-    /*background: #e9aea2;*/
+/*内容输入框（通用模块）*/
+#myContent .query input{
+    border:1px solid #337ab7;
+    width:100px;
 }
-#wangcai1 td{
+/*内容按钮*/
+#myContent .query span{
+    padding:5px;
+    border-radius: 10px;
+    background: #337ab7;
+    color:#fff;
+}
+/*结果数据展示*/
+#tongyong1 #showIdCards,#tongyong2 #showBankCards{
+    margin-left: 3%;
+}
+/*查询结果表格设置*/
+#tongyong1 th,#tongyong1 td,#tongyong2 th,#tongyong2 td{
+    border:1px solid #000;
     margin:auto;
-    padding: 20px 50px;
+    padding: 20px 80px;
 }
-#wangcai2 td{
-    margin:auto;
-    padding: 20px 50px;
+/*通用4日期选择器长度*/
+#tongyong4 input{
+    border:1px solid #337ab7;
+    width:150px;
 }
-#yunkong1 td{
-    margin:auto;
-    padding: 15px 50px;
+/*内容下拉框*/
+#myContent .query select{
+    border:1px solid #337ab7;
+    width:100px;
 }
-#yunkong1 label{
-    display: block;
-    margin:2% 0;
-}
-#yunkong1 label span{
-    display:block;
-}
-#tongyong1 #showIdCards{
-    margin:auto ;
-}
-#tongyong1 th,#tongyong1 td{
-    border:2px solid #000;
-    margin:auto;
-    padding: 30px 100px;
-}
-#tongyong2 th,#tongyong2 td{
-    border:2px solid #000;
-    margin:auto;
-    padding: 30px 100px;
-}
-#myContent .instuction{
-    margin-top:20%;
-    margin-left:50%;
-    width:50%;
-    height:30%;
-    color:#5e5e5e;
-    background-image: url("../img/qipao1.png");
-    background-repeat: no-repeat;
-    padding:10% 10%;
-}
-/******************右菜单***************/
+/*说明*/
+/*#myContent .instuction{*/
+/*    margin-top:20%;*/
+/*    margin-left:50%;*/
+/*    width:50%;*/
+/*    height:30%;*/
+/*    color:#5e5e5e;*/
+/*    background-image: url("../img/qipao1.png");*/
+/*    background-repeat: no-repeat;*/
+/*    padding:10% 10%;*/
+/*}*/
+/***************************************右菜单*************************************/
 #myMenu{
     /*border: 1px solid #ddd;*/
     width:6%;
