@@ -7,9 +7,11 @@ $('.panel-heading').click(function(){
 });
 // 侧边栏点击/悬浮变色{
 $("#myNav p").mouseover=function () {
-    // $(this).css("font")
+    $(this).css("font-size","20px");
 }
-
+$("#myNav p").mouseout=function () {
+    $(this).css("font-size","18px");
+}
 // 定义ip
 // var ip='http://192.168.0.149:5555';
 var ip='http://192.168.10.35:5555';
@@ -22,7 +24,7 @@ function product() {
         dataType: 'jsonp',
         dataType: "JSON",
         success: function (datas) {
-            alert("修改成功");
+            alert('修改成功');
         }
     })
 }
@@ -74,19 +76,38 @@ $("#eProductRepayTime").click(function eProductRepayTime(){
     var p=$("#period").val()
     p=parseInt(p);
     var date=new Date($("#eRepayTime").val());
+    var month=date.getMonth()+1;
+    var day=date.getDate();
+    var hour=date.getHours();
+    var minutes=date.getMinutes();
+    if(month<10){
+        if(day<10){if(hour<10){if(minutes<10){minutes='0'+minutes;}hour='0'+hour;}day='0'+day;}month='0'+month;
+    }
+    date=date.getFullYear()+'-'+month+'-'+day+"+"+ hour+':'+minutes+':57';
     console.log(date);
-    date=date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate()+"+"+
-        date.getHours()+':'+date.getMinutes()+':00';
     $.ajax({
         url:ip+"/test/ecmrepay?eproductnid="+$("#eProductNid").val()+"&erepaytime="+date
             +"&period="+p,
         type:'get',
         dataType: 'jsonp',
         dataType: "JSON",
-        success:function(data){
-            alert(data.msg);
+        success:function(datas){
+            var status=datas.status;
+            if(status==0){
+                var data=datas.data||[];
+                var str='<thead><tr><th>标的号</th><th>期数</th><th>应还时间</th></tr></thead><tbody>';
+                var product=$("#eProductNid").val();
+                $.each(data,function(number,content) {
+                    str+='<tr><td>'+product+'</td><td>'+content.period+'</td><td>'+content.repaytime+'</td></tr>';
+                }  )
+                str+='</tbody>';
+            }else if(status==1){
+                var str='修改失败';
+            }else{
+                var str='未知原因';
+            }
+            $('#eProductResult').append(str);
         }
-
     })
 });
 // 获取证件号
@@ -101,9 +122,8 @@ $("#getIdCards").click(function getIdCards() {
             var cards=datas.cards||{};
             var str='';
             str+='<table><thead><tr><th>序号</th><th>证件号</th></tr></thead><tbody>';
-            // str+='<table>';
             $.each(cards,function(key,value){
-                str +='<tr><td>'+key+'</td><td>'+value +'</td>';
+                str +='<tr><td>'+key+'</td><td>'+value +'</td></tr>';
             })
             str +='</tbody></table>';
             $('#showIdCards').append(str);
@@ -134,16 +154,16 @@ $('#getBankCards').click(function getBankCards() {
 // 日期计算
 $("#count1").click(function countDays(){
         $("#result1").html('');
-        var str=$("#startDate2").val();
+        var str=$("#startDate").val();
         if(str==''){
             var start=new Date()
         }else{
-            var start=new Date($("#startDate2").val());
+            var start=new Date($("#startDate").val());
         }
         var end=new Date($("#endDate").val());
         var days=end.getTime()-start.getTime();
         var day=parseInt(days/(1000*60*60*24))+1;
-        $("#result1").append(day);
+        $("#result1").append(day-1+'天');
         });
 $("#count2").click(function countEndDate(){
         $("#result2").html("");
