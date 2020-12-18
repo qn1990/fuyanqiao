@@ -13,8 +13,8 @@ $("#myNav p").mouseout=function () {
     $(this).css("font-size","18px");
 }
 // 定义ip
-var ip='http://192.168.0.149:5555';
-// var ip='http://192.168.10.35:5555';
+// var ip='http://192.168.0.149:5555';
+var ip='http://192.168.10.35:5555';
 // var ip='http://10.0.0.104:5555';
 // 修改散标应还款时间
 function product() {
@@ -73,6 +73,7 @@ $('#getBill').click(function getBill() {
 });
 // 修改消金还款时间
 $("#eProductRepayTime").click(function eProductRepayTime(){
+    $('#eProductResult').html('');
     var p=$("#period").val()
     p=parseInt(p);
     var date=new Date($("#eRepayTime").val());
@@ -83,6 +84,7 @@ $("#eProductRepayTime").click(function eProductRepayTime(){
     if(month<10){
         if(day<10){if(hour<10){if(minutes<10){minutes='0'+minutes;}hour='0'+hour;}day='0'+day;}month='0'+month;
     }
+    console.log(month,day,hour,minutes);
     date=date.getFullYear()+'-'+month+'-'+day+"+"+ hour+':'+minutes+':57';
     console.log(date);
     $.ajax({
@@ -92,6 +94,7 @@ $("#eProductRepayTime").click(function eProductRepayTime(){
         dataType: 'jsonp',
         dataType: "JSON",
         success:function(datas){
+            console.log(datas);
             var status=datas.status;
             if(status==0){
                 var data=datas.data||[];
