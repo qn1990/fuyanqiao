@@ -152,7 +152,7 @@
                     <div class="dataArea">
                         <div class="query">
                             业务员登录授权：<input id="authorization" type="text">
-                            借款人姓名：<input id="billCustomerName" type="text">
+                            借款人姓名：<input id="billCustomerName" type="text"><br><br>
                             借款人手机号：<input id="billCustomerMobile" type="text">
                             身份证号：<input id="idCard" type="text"><br><br>
                             借款金额(万元)：<input id="borrowAmount" type="text">
@@ -177,11 +177,14 @@
                     <div class="tag">修改还款时间</div>
                     <div class="dataArea">
                         <div class="query">
-                            订单号：<input id="eProductNid" type="text">
-                            预期还款时间：<input id="eRepayTime" type="datetime-local">
+                            订单号：<input id="eProductNid" type="text" value="P202009081436059262094">
+                            预期还款时间：<input id="eRepayTime" type="datetime-local"><br><br>
                             期数：<input id="period" type="text">&nbsp;&nbsp;
                             <span id="eProductRepayTime">确定</span>
                         </div>
+                        <table id="eProductResult" class="queryResult">
+
+                        </table>
                     </div>
                 </div>
                 <div id="xiaojin2" class="tab-pane fade">
@@ -252,7 +255,7 @@
                                 开始日期：<input id="startDate" type="datetime-local"><br><br>
                                 结束日期：<input id="endDate" type="datetime-local"><br><br>
                                 <button id="count1" style="background: #337ab7;color:#fff">计算</button><br><br>
-                                结果：
+                                相差：
                                 <span id="result1"></span>
                             </div>
                             <div id="page2" class="tab-pane fade">
