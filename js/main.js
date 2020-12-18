@@ -13,8 +13,8 @@ $("#myNav p").mouseout=function () {
     $(this).css("font-size","18px");
 }
 // 定义ip
-// var ip='http://192.168.0.149:5555';
-var ip='http://192.168.10.35:5555';
+var ip='http://192.168.0.149:5555';
+// var ip='http://192.168.10.35:5555';
 // var ip='http://10.0.0.104:5555';
 // 修改散标应还款时间
 function product() {
