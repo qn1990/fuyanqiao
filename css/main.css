@@ -5,7 +5,7 @@ body,html{
     overflow-x: hidden;
     overflow-y: hidden;
 }
-/*********************************父元素：背景墙******************************/
+/*********************************背景墙******************************/
 #fa{
     width: 100%;
     height: 100%;
@@ -13,7 +13,7 @@ body,html{
     overflow: hidden;
     background-image: url("../img/bgImg2.png");
 }
-/*********************************子元素：内容*******************************/
+/*********************************内容*******************************/
 #so {
     background: rgba(255,255,255,0);
     position: absolute;
@@ -133,6 +133,10 @@ section{
 #myContent div[class='query']{
     padding:3%;
 }
+/*查询结果*/
+#myContent .queryResult{
+    margin-left:30px;
+}
 /*n内容溢出*/
 #myContent>div{
     overflow-y: scroll;
@@ -148,7 +152,7 @@ section{
 /*内容输入框（通用模块）*/
 #myContent .query input{
     border:1px solid #337ab7;
-    width:100px;
+    width:170px;
 }
 /*内容按钮*/
 #myContent .query span{
@@ -167,16 +171,29 @@ section{
     margin:auto;
     padding: 20px 80px;
 }
-/*通用4日期选择器长度*/
-#tongyong4 input{
-    border:1px solid #337ab7;
-    width:150px;
-}
 /*内容下拉框*/
 #myContent .query select{
     border:1px solid #337ab7;
     width:100px;
 }
+/*内容分别设置*/
+#eProductResult th{
+    border:1px solid #000;
+    box-shadow: #337ab7 0px 0px 5px 0px inset;
+    padding: 10px 52px;
+    color:#1157B7;
+    font-weight: bold;
+}
+#eProductResult td{
+    border:1.5px solid #000;
+    padding:9px 52px;
+}
+/*通用4日期选择器长度*/
+#tongyong4 input{
+    border:1px solid #337ab7;
+    width:200px;
+}
+
 /*说明*/
 /*#myContent .instuction{*/
 /*    margin-top:20%;*/
